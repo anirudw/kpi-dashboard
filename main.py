@@ -17,6 +17,7 @@ try:
     churn_record = cursor.fetchall()
     # print(churn_record);
     cursor.execute("""SELECT  * from customer_profile;""")
+    profile_record = cursor.fetchall()
 
     # print("RECORD:", record)
 except (Exception) as error:
@@ -27,11 +28,7 @@ mom_df.set_index("Sales Month", inplace=True)
 
 churn_df = pd.DataFrame(churn_record, columns=['Customer ID', 'Date of Last Purchase', ' Days since Last Purchase', 'Is Churned'])
 churn_df.set_index("Customer ID", inplace = True)
-# churn_df.index = churn_df['Customer ID']
-print(churn_df.head())
-# print(mom_df.head())
 
+profile_df = pd.DataFrame(profile_record, columns=['Customer ID', 'No. of Purchases', 'Total Revenue'])
+profile_df.set_index("Customer ID", inplace=True)
 
-
-# data_set = pd.read_csv('online_retail_2010_2011.csv')
-# print(data_set.head())
