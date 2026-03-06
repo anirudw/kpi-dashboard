@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import seaborn as sb
 
+sb.set_theme(style='whitegrid')
+
 def churn_num_plot(churn_data):
     fig, ax1 = plt.subplots(figsize=(10,6))
     sb.barplot(
@@ -14,7 +16,7 @@ def churn_num_plot(churn_data):
     )
 
     ax1.set_title("Number of Churned Customers")
-    ax1.set_xlabel("Is Churned? (1 / 0)")
+    ax1.set_xlabel("Is Churned?")
     ax1.set_ylabel("Number of Customers")
 
-    plt.show()
+    return fig
