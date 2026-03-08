@@ -60,7 +60,7 @@ sqlalchemy         # SQL toolkit and ORM
 python-dotenv      # Environment variable management
 ```
 
-## 🚀 Installation
+## How to run this?
 
 1. **Clone the repository**
 
@@ -104,7 +104,6 @@ python-dotenv      # Environment variable management
    python loader/db_loader.py
    ```
 
-## ▶️ Running the Dashboard
 
 Start the Streamlit application:
 
@@ -112,9 +111,9 @@ Start the Streamlit application:
 streamlit run app.py
 ```
 
-The dashboard will open in your default browser at `http://localhost:8501`.
+The dashboard will open in the default browser at `http://localhost:8501`.
 
-## 👏 Acknowledgments
+## Acknowledgments
 
 - Dataset originally from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Online+Retail+II)
 - Built with [Streamlit](https://streamlit.io/), [Pandas](https://pandas.pydata.org/), and [Matplotlib](https://matplotlib.org/)
