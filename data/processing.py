@@ -15,7 +15,7 @@ def process_customer_profile(record):
     profile_df["Customer ID"] = profile_df['Customer ID'].astype(int)
     profile_df.set_index('Customer ID', inplace=True)
     top_ten_df = profile_df.head(10)
-    print(profile_df)
+    # print(total_customers)
     return (profile_df, top_ten_df)
 
 def process_customer_churn(record):

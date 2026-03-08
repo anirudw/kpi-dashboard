@@ -19,13 +19,14 @@ st.set_page_config(
 )
 st.title("Retail KPI Dashboard")
 
-col1, col2, col3= st.columns(3)
+col1, col2, col3, col4= st.columns(4)
 col1.metric("Total Customers: ", tot_customers)
 col2.metric("Total Revenue: ", f"${tot_revenue:,.0f}")
-col3.metric("Churn Rate: ", f"{churn_rate:.2f}%")
+col3.metric("Revenue per Customer: ", f"${tot_revenue/tot_customers:,.2f}")
+col4.metric("Churn Rate: ", f"{churn_rate:.2f}%")
 
 st.subheader("Month Over Month Growth")
-st.pyplot(mom_fig)
+st.plotly_chart(mom_fig)
 
 st.subheader("Top Ten Customers")
 st.pyplot(top_ten_fig)
