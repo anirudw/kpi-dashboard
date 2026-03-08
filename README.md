@@ -53,8 +53,7 @@ All dependencies are listed in [`requirements.txt`](requirements.txt):
 ```txt
 streamlit          # Web application framework
 pandas             # Data manipulation and analysis
-matplotlib         # Plotting library
-seaborn            # Statistical data visualization
+plotly             # Data visualisation
 psycopg2           # PostgreSQL adapter
 sqlalchemy         # SQL toolkit and ORM
 python-dotenv      # Environment variable management
