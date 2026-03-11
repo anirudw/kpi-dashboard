@@ -29,10 +29,10 @@ st.subheader("Month Over Month Growth")
 st.plotly_chart(mom_fig)
 
 st.subheader("Top Ten Customers")
-st.pyplot(top_ten_fig)
+st.plotly_chart(top_ten_fig)
 
 st.subheader("Churn Rate")
-st.pyplot(churn_num_fig)
+st.plotly_chart(churn_num_fig)
 
 
 

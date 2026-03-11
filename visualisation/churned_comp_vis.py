@@ -1,22 +1,15 @@
-import matplotlib.pyplot as plt
-import seaborn as sb
+import plotly.express as px
 
-sb.set_theme(style='whitegrid')
+def churn_num_plot(churn_df):
 
-def churn_num_plot(churn_data):
-    fig, ax1 = plt.subplots(figsize=(10,6))
-    sb.barplot(
-        data = churn_data,
-        x = 'Is Churned',
-        y = 'Customer Count',
-        hue="Is Churned",
-        palette=['blue', 'red'],
-        
-        ax = ax1
+    fig = px.pie(
+        churn_df,
+        names="Is Churned",
+        values="Customer Count",
+        hole=0.4,
+        title="Customer Churn Distribution"
     )
 
-    ax1.set_title("Number of Churned Customers")
-    ax1.set_xlabel("Is Churned?")
-    ax1.set_ylabel("Number of Customers")
+    fig.update_layout(template="plotly_white")
 
     return fig

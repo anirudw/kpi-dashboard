@@ -1,24 +1,23 @@
-import seaborn as sb
-import matplotlib.pyplot as plt
+import plotly.express as px
 
-sb.set_theme(style='whitegrid')
+def plot_top_ten(top_ten_df):
+    top_ten_df = top_ten_df.copy()
+    top_ten_df.index = top_ten_df.index.astype(str)
 
-def plot_top_ten(profile_data):
-
-    fig, ax1 = plt.subplots(figsize=(10,6))
-    sb.barplot(
-        data = profile_data,
-        x = "Customer ID",
-        y = "Total Revenue",
-        palette='viridis',
-        hue="Total Revenue",
-        ax = ax1
+    fig = px.bar(
+        top_ten_df,
+        x="Total Revenue",
+        y=top_ten_df.index,
+        orientation="h",
+        title="Top 10 Customers by Revenue",
+        color="Total Revenue",
+        color_continuous_scale="Blues"
     )
 
-    ax1.set_title("Top 10 Customers by Revenue")
-    ax1.set_xlabel("Customer ID")
-    ax1.set_ylabel("Revenue Generated in $")
+    fig.update_layout(
+        template="plotly_white",
+        yaxis=dict(type="category", title="Customer ID"),
+        xaxis=dict(title="Total Revenue ($)", tickformat=",")
+    )
 
     return fig
-
-
